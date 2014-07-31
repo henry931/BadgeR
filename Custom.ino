@@ -289,13 +289,8 @@ void loop() {
   
   if(digitalRead(SEL_PIN)){
 //    Serial.println("Sel");
-    if(current_wif)
-      {
-        prev_wif();
-        current_wif = 0;
-      }
-    next_wif();
-    
+    if(current_wif) prev_wif();
+    else next_wif();  
     update_needed = true;
   }
   if(digitalRead(UP_PIN)){
